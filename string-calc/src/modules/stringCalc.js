@@ -9,8 +9,6 @@ function makeClosure() {
             return { result: 0, error: false, calledCount: count };
         }
         let numArray = retriveNumsFromStr(strnum);
-        let result = addNumbers(numArray);
-        result.count = count;
         return addNumbers(numArray);
     }
     function getFunCalledCount() {

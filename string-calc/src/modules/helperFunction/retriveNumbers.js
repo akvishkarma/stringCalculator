@@ -16,6 +16,6 @@ export default function retriveNumsFromStr(strnum) {
     } else {
         numberString = strnum;
     }
-    const numArray = numberString.split(/[\n,]+/);
+    const numArray = numberString.indexOf("\\n") !== -1 ? numberString.split(/[\\n,]+/) : numberString.split(/[\n,]+/);
     return numArray;
 }

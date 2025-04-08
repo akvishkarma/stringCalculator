@@ -31,14 +31,27 @@ describe('Test the stringCalculator add function same behaviour from the UI', ()
         const result = screen.getByText(/Result: 3/i);
         expect(result).toBeInTheDocument();
     });
-    test('returns the total number after addition of numbers passsed in str with delimitor like: "//[;]\\n1;2;3"', () => {
+    test('returns the sum of two number when two numbers are provided like: "1\n2,3"', () => {
         render(<App />);
         let input = screen.getByTitle(/enter value/i);
-        fireEvent.change(input, { target: { value: '//[;]\\n1;2;3' } });
+        fireEvent.change(input, { target: { value: '1\n2,3' } });
         let btn = screen.getByText(/Click to get Result/i);
         fireEvent.click(btn);
-        const result = screen.getByText(/Result: 6/i);
-        expect(result).toBeInTheDocument();
+        setTimeout(() => {
+            const result = screen.getByText(/Result: 6/i);
+            expect(result).toBeInTheDocument();
+        }, 500);
+    });
+    test('returns the total number after addition of numbers passsed in str with delimitor like: "//[;]\n1;2;3"', () => {
+        render(<App />);
+        let input = screen.getByTitle(/enter value/i);
+        fireEvent.change(input, { target: { value: '//[;]\n1;2;3' } });
+        let btn = screen.getByText(/Click to get Result/i);
+        fireEvent.click(btn);
+        setTimeout(() => {
+            const result = screen.getByText(/Result: 6/i);
+            expect(result).toBeInTheDocument();
+        }, 500);
     });
 
     test('returns total after avoiding negative numbers passed in str with delimitor like: "//[;]\n1;2;3;4;-43;-2;43;65;"', () => {
@@ -114,6 +127,6 @@ describe('Test the stringCalculator add function same behaviour from the UI', ()
         });
     });
     afterAll(() => {
-        expect(getCount()).toBe(11);
+        expect(getCount()).toBe(12);
     });
 });

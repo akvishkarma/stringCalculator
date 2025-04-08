@@ -11,13 +11,16 @@ describe('Test for the stringCalculator add function', () => {
   test('returns the sum of two number when two numbers are provided like: "1,2"', () => {
     expect(performCalculation("1,2").result).toBe(3);
   });
+  test('returns the sum of two number when two numbers are provided like: "1\n2,3"', () => {
+    expect(performCalculation("1\n2,3").result).toBe(6);
+  });
   test('returns the total number after addition of numbers passsed in str with delimitor like: "//[;]\\n1;2;3"', () => {
     expect(performCalculation("//[;]\\n1;2;3").result).toBe(6);
   });
   test('returns total after avoiding negative numbers passed in str with delimitor like: "//[;]\n1;2;3;4;-43;-2;43;65;"', () => {
     expect(performCalculation("//[;]\n1;2;3;4;-43;-2;43;65;").errorMsg).toBe('negatives not allowed and the negative that was passed: -43,-2');
   });
-  test('returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//[];]\n1;2;1004;5;10001;1000"', () => {
+  test('returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//[;]\n1;2;1004;5;10001;1000"', () => {
     expect(performCalculation("//[;]\n1;2;1004;5;10001;1000").result).toBe(1008);
   });
 
@@ -38,7 +41,7 @@ describe('Test for the stringCalculator add function', () => {
     });
   });
   afterAll(() => {
-    expect(getCount()).toBe(10);
+    expect(getCount()).toBe(11);
   });
 });
 

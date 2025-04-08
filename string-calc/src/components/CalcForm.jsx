@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { performCalculation } from '../modules/stringCalc'
+import { performCalculation, getCount } from '../modules/stringCalc'
 export default function CalcForm() {
     const [input, setInput] = useState("");
     const [result, setResult] = useState(0);
@@ -7,14 +7,9 @@ export default function CalcForm() {
     const [count, setCount] = useState(0);
     const handleClick = () => {
         let res = performCalculation(input);
-        if (res.errorMsg) {
-            setError(res.errorMsg);
-            setCount(res.calledCount);
-        } else {
-            setResult(res.result);
-            setCount(res.calledCount);
-        }
-
+        setResult(res.result);
+        setError(res.errorMsg);
+        setCount(getCount());
     };
     return (
         <div className='calcContainer'>
