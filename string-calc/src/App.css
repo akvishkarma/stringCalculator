@@ -44,7 +44,6 @@ input#input {
   box-sizing: border-box;
   font-size: 0.5em;
   font-weight: bold;
-  direction: rtl;
 }
 
 .error {

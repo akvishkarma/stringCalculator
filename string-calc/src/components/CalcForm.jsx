@@ -6,7 +6,12 @@ export default function CalcForm() {
     const [error, setError] = useState(false);
     const handleClick = () => {
         let res = stringCalc(input);
-        setResult(res);
+        if (res.error) {
+            setError(res.error);
+        } else {
+            setResult(res.result);
+        }
+
     };
     return (
         <div className='calcContainer'>

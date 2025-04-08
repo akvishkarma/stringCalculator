@@ -1,10 +1,43 @@
 export function stringCalc(strnum) {
     //case1: return 0 when there is no input present
     if (!strnum) {
-        return 0;
+        return { result: 0, error: false };
     }
-    //case 2: number present like 1,2,3 will give total of this number as mentioned "1,2" == 3
-    let numsArr = strnum.split(",");
-    let totalNum = numsArr.reduce((acc, num) => { return acc + parseInt(num || 0) }, 0);
-    return totalNum;
+    // Case 2: Handle custom delimiter syntax (//[delimiter]\n[numbers...])
+    if (strnum.startsWith('//')) {
+        let delimiterEndIndex;
+        if (strnum.indexOf("\\n") !== -1) {
+            delimiterEndIndex = strnum.indexOf('\\n');
+        } else {
+            delimiterEndIndex = strnum.indexOf('\n');
+        }
+        const delimiter = strnum.substring(2, delimiterEndIndex); // Get the custom delimiter
+        const numberString = strnum.substring(delimiterEndIndex + 2);
+        // Split numbers based on the custom delimiter
+        const numArray = numberString.split(delimiter);
+        return sumNumbers(numArray);
+    }
+    // Case 3: Handle default comma and newline-separated numbers
+    const numArray = strnum.split(/[\n,]+/); // Split by commas or newlines
+    return sumNumbers(numArray);
+
+}
+function sumNumbers(nums) {
+    let totalNum;
+    try {
+        totalNum = nums.reduce((acc, num) => {
+            if (num !== '' && !parseInt(num)) {
+                throw new Error(`Invalid number: ${num}`);
+            }
+            return acc + parseInt(num || 0)
+        }, 0);
+
+    } catch (e) {
+        return {
+            result: null,
+            error: true,
+            errorMsg: e
+        }
+    }
+    return { result: totalNum, error: false };
 }
