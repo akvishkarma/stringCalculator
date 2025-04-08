@@ -4,12 +4,15 @@ export default function CalcForm() {
     const [input, setInput] = useState("");
     const [result, setResult] = useState(0);
     const [error, setError] = useState(false);
+    const [count, setCount] = useState(0);
     const handleClick = () => {
         let res = stringCalc(input);
         if (res.errorMsg) {
             setError(res.errorMsg);
+            setCount(res.calledCount);
         } else {
             setResult(res.result);
+            setCount(res.calledCount);
         }
 
     };
@@ -21,7 +24,8 @@ export default function CalcForm() {
             </div>
             <button onClick={() => { handleClick() }}>Click To get Result</button>
             <div className='inputContainer flexcontainer'>
-                {!error ? <div className="results">Result: {result}</div> : <div className="error"><strong>Error: </strong>{error}</div>}
+                {!error ? <div className="results">Result: {result}</div> : <div className="error">Error: {error}</div>}
+                <div className='countDiv'>No Of Called Function: {count}</div>
             </div>
         </div>
     )
