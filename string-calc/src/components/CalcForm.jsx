@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { stringCalc } from '../modules/stringCalc'
+import { performCalculation } from '../modules/stringCalc'
 export default function CalcForm() {
     const [input, setInput] = useState("");
     const [result, setResult] = useState(0);
     const [error, setError] = useState(false);
     const [count, setCount] = useState(0);
     const handleClick = () => {
-        let res = stringCalc(input);
+        let res = performCalculation(input);
         if (res.errorMsg) {
             setError(res.errorMsg);
             setCount(res.calledCount);

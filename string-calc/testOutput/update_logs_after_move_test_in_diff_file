@@ -1,0 +1,17 @@
+ PASS  src/stringCalFunction.test.js
+ PASS  src/stringCalFunctionWithUI.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       20 passed, 20 total
+Snapshots:   0 total
+Time:        2.371 s, estimated 4 s
+Ran all test suites related to changed files.
+
+Watch Usage
+ › Press a to run all tests.
+ › Press f to run only failed tests.
+ › Press q to quit watch mode.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press Enter to trigger a test run.
+

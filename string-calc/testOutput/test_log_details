@@ -1,115 +1,53 @@
- Test for the stringCalculator add function
-    √ returns 0 for an empty string (2 ms)
-    √ returns the same number when one number is provided (1 ms)
-    √ returns the sum when two numbers are provided (1 ms)
-    √ returns the sum when two numbers are provided
-    √ returns the same number when provide number with delimitor custom (1 ms)
-    √ returns the same number when provide number with delimitor custom & passing negative numbers
-    √ return total num after exclude number greater than 1000 (1 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    √ test empty input (50 ms)
-    √ returns the same number when one number is provided (10 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    √ test empty input (50 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-    return total num different delimiter length
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 3 (1 ms)
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    √ test empty input (50 ms)
-    √ returns the same number when one number is provided (10 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
-    √ return total num after exclude number greater than 1000 (6 ms)
-
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    √ test empty input (50 ms)
-    √ returns the same number when one number is provided (10 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
-    √ return total num after exclude number greater than 1000 (6 ms)
-
-Test Suites: 1 passed, 1 total
-      √ return total num different delimiter length case1 has length 5 (1 ms)
-  Test for the stringCalculator add function from UI
-    √ test empty input (50 ms)
-    √ returns the same number when one number is provided (10 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
-    √ return total num after exclude number greater than 1000 (6 ms)
-
-    √ test empty input (50 ms)
-    √ returns the same number when one number is provided (10 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
-    √ returns the same number when two number with , separator is provided (9 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
-    √ returns the same number when provide number with delimitor custom (9 ms)
-    √ passing negative number from UI (6 ms)
  PASS  src/App.test.js
   Test for the stringCalculator add function
-    √ returns 0 for an empty string like: "" (2 ms)
-    √ returns the same number when one number is provided like: "1" (1 ms)
+    √ returns 0 for an empty string like: "" (3 ms)
+    √ returns the same number when one number is provided like: "1" (2 ms)
     √ returns the sum of two number when two numbers are provided like: "1,2" (1 ms)
-    √ returns the total number after addition of numbers passsed in str with delimitor like: "//;\n1;2;3" (3 ms)
-    √ returns total after avoiding negative numbers passed in str with delimitor like: "//;
-1;2;3;4;-43;-2;43;65;" (1 ms)
-    √ returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//;
-1;2;1004;5;10001;1000"
-    return total num different delimiter length
-      √ return total of number passed in str with dynamic length of delimitor with length 3 like: "//***
-1***2***3" (1 ms)
-      √ return total of number passed in str with dynamic length of delimitor with length 5 like: "//***
+    √ returns the total number after addition of numbers passsed in str with delimitor like: "//[;]\n1;2;3" (1 ms)
+    √ returns total after avoiding negative numbers passed in str with delimitor like: "//[;]
+1;2;3;4;-43;-2;43;65;"
+    √ returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//[];]
+1;2;1004;5;10001;1000" (1 ms)
+    return total num with different delimiter length
+      √ return total of number passed in str with dynamic length of delimitor with length 3 like: "//[***]                       
 1***2***3"                                                                                                                       
+      √ return total of number passed in str with dynamic length of delimitor with length 5 like: "//[***]                       
+1***2***3"                                                                                                                       
+    return total num with multiples delimiter                                                                                    
+      √ return total of number passed in str with multiple delimitor and has dynamic length 3 like: "//***                       
+1***2***3" (1 ms)                                                                                                                
+      √ return total of number passed in str with multiple delimitor and has dynamic length  5 like: "//***                      
+1***2***3" (1 ms)                                                                                                                
   Test the stringCalculator add function same behaviour from the UI                                                              
-    √ test empty input (52 ms)                                                                                                   
+    √ test empty input (77 ms)                                                                                                   
     √ returns the same number when one number is provided like: "1" (12 ms)                                                      
-    √ returns the sum of two number when two numbers are provided like: "1,2" (9 ms)                                             
-    √ returns the total number after addition of numbers passsed in str with delimitor like: "//;\n1;2;3" (7 ms)
-    √ returns total after avoiding negative numbers passed in str with delimitor like: "//;
-1;2;3;4;-43;-2;43;65;" (7 ms)
-    √ returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//;
-1;2;1004;5;10001;1000" (8 ms)
-    return total num different delimiter length
-      √ return total of number passed in str with dynamic length of delimitor with length 3 like: "//***
-1***2***3" (7 ms)
-      √ return total of number passed in str with dynamic length of delimitor with length 5 like: "//***
-1***2***3" (6 ms)
-
+    √ returns the sum of two number when two numbers are provided like: "1,2" (8 ms)                                             
+    √ returns the total number after addition of numbers passsed in str with delimitor like: "//[;]\n1;2;3" (8 ms)               
+    √ returns total after avoiding negative numbers passed in str with delimitor like: "//[;]                                    
+1;2;3;4;-43;-2;43;65;" (6 ms)                                                                                                    
+    √ returns total after avoiding number greater than 1000 numbers passed in str with delimitor like: "//[;]                    
+1;2;1004;5;10001;1000" (6 ms)                                                                                                    
+    return total num different delimiter length                                                                                  
+      √ return total of number passed in str with dynamic length of delimitor with length 3 like: "//[***]                       
+1***2***3" (14 ms)                                                                                                               
+      √ return total of number passed in str with dynamic length of delimitor with length 5 like: "//[***]                       
+1***2***3" (7 ms)                                                                                                                
+    return total num with multiples delimiter                                                                                    
+      √ return total of number passed in str with multiple delimitor and has dynamic length 3 like: "//[*][%]                    
+1*2%3" (10 ms)                                                                                                                   
+      √ return total of number passed in str with multiple delimitor and has dynamic length  5 like: "//[**][%%]                 
+1**2%%3" (8 ms)                                                                                                                  
+                                                                                                                                 
 Test Suites: 1 passed, 1 total
-Tests:       16 passed, 16 total
+Tests:       20 passed, 20 total
 Snapshots:   0 total
-Time:        3.77 s
+Time:        2.577 s, estimated 3 s
 Ran all test suites related to changed files.
+
+Watch Usage
+ › Press a to run all tests.
+ › Press f to run only failed tests.
+ › Press q to quit watch mode.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press Enter to trigger a test run.
