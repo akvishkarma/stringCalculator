@@ -20,17 +20,26 @@ export function stringCalc(strnum) {
     // Case 3: Handle default comma and newline-separated numbers
     const numArray = strnum.split(/[\n,]+/); // Split by commas or newlines
     return sumNumbers(numArray);
-
 }
 function sumNumbers(nums) {
     let totalNum;
     try {
-        totalNum = nums.reduce((acc, num) => {
-            if (num !== '' && !parseInt(num)) {
-                throw new Error(`Invalid number: ${num}`);
+        let negativeNumber = nums.filter(num => (num != '' && num < 0));
+        debugger;
+        if (negativeNumber.length) {
+            return {
+                error: true,
+                result: null,
+                errorMsg: `negatives not allowed and the negative that was passed: ${negativeNumber.join(',')}`
             }
-            return acc + parseInt(num || 0)
-        }, 0);
+        } else {
+            totalNum = nums.reduce((acc, num) => {
+                if (num !== '' && !parseInt(num)) {
+                    throw new Error(`Invalid number: ${num}`);
+                }
+                return acc + parseInt(num || 0)
+            }, 0);
+        }
 
     } catch (e) {
         return {

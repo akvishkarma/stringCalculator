@@ -18,6 +18,9 @@ describe('Test for the stringCalculator add function', () => {
   test('returns the same number when provide number with delimitor custom', () => {
     expect(stringCalc("//;\\n1;2;3").result).toBe(6);
   });
+  test('returns the same number when provide number with delimitor custom & passing negative numbers', () => {
+    expect(stringCalc("//;\n1;2;3;4;-43;-2;43;65;").errorMsg).toBe('negatives not allowed and the negative that was passed: -43,-2');
+  });
 });
 
 describe('Test for the stringCalculator add function from UI', () => {
@@ -57,6 +60,15 @@ describe('Test for the stringCalculator add function from UI', () => {
     let btn = screen.getByText(/Click to get Result/i);
     fireEvent.click(btn);
     const result = screen.getByText(/Result: 6/i);
+    expect(result).toBeInTheDocument();
+  });
+  test('returns the same number when provide number with delimitor custom & passing negative numbers', () => {
+    render(<App />);
+    let input = screen.getByTitle(/enter value/i);
+    fireEvent.change(input, { target: { value: '//;\n1;2;3;4;-43;-2;43;65;' } });
+    let btn = screen.getByText(/Click to get Result/i);
+    fireEvent.click(btn);
+    const result = screen.getByText(/negatives not allowed and the negative that was passed: -43,-2/i);
     expect(result).toBeInTheDocument();
   });
 });
