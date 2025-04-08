@@ -1,0 +1,77 @@
+.App {
+  font-size: 2em;
+}
+
+.App h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 0;
+  text-shadow: 0 0 3px #FF0000;
+}
+
+.calcContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 60vw;
+  min-width: 10em;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0.6em;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+input#input {
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  height: 2.5em;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 0.5em;
+  font-weight: bold;
+  direction: rtl;
+}
+
+.error {
+  color: red;
+}
+
+.results {
+  color: green;
+}
+
+button {
+  width: 15em;
+  height: 3em;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1em;
+  cursor: pointer;
+  background-color: cadetblue;
+}
+
+button:hover {
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:hover {
+  box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.2);
+}
